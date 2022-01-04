@@ -3,7 +3,7 @@
 
 In this project, random numbers will be generated using rand() function, and an input from the user will be taken. But First you will see choices like this: 
 
----
+```
  THREE TYPES OF NUMBER GUESSING GAME
 
  SELECT FROM THE FOLLOWING CHOICES:-
@@ -16,7 +16,7 @@ In this project, random numbers will be generated using rand() function, and an 
 
  Enter your choice:-
 
----
+```
 
 You have to input your choice by entering 1/2/3/4/5 according to your needs.
 Then you can play the game and have three chances to guess the number.
