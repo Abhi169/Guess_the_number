@@ -8,7 +8,6 @@ int main()
     srand(time(NULL));
     i=0;
     int score=0;
-    start:
     printf("\n THREE TYPES OF NUMBER GUESSING GAME\n");
     printf("\n SELECT FROM THE FOLLOWING CHOICES:-");
     printf("\n");
@@ -20,6 +19,10 @@ int main()
     printf("\n");
     printf("\nEnter your choice:-");
     scanf("%d",&choices);
+    while((choices != 1)&&(choices != 2)&&(choices != 3)&&(choices != 4)&&(choices != 5)){
+        printf("You Entered A Wrong Choice\nPlease Enter A Valid Choice:-");
+        scanf("%d",&choices);
+    }
 
     if(choices==1)
     {
@@ -37,12 +40,18 @@ int main()
             if(x==a){
                 ++score;
                 printf("\n Congratulations YOU GUESSED it Right! ");
-                printf("\n BINGO! YOU WIn! ");break;
+                printf("\n BINGO! YOU WIn! ");
+                printf("\n Your Score is %d",score);
+                break;
             }
-            else if(x<a)
-            printf("\n HINT: The Number is less than what you think");
-            else if(x>a)
-            printf("\n HINT: The Number is greater than what you think");
+            else if(x<a){
+                if(i!=3)
+                printf("\n HINT: The Number is less than what you guessed");
+            }
+            else if(x>a){
+                if(i!=3)
+                printf("\n HINT: The Number is greater than what you guessed");
+            }
             if(i==3)
             {
                 printf("\n");
@@ -75,12 +84,18 @@ int main()
             if(x==a){
                 ++score;
                 printf("\n Congratulations YOU GUESSED it Right! ");
-                printf("\n BINGO! YOU WIN! ");break;
+                printf("\n BINGO! YOU WIN! ");
+                printf("\n Your score is %d",score);
+                break;
             }
-            else if(x<a)
-            printf("\n HINT: The number is less than what you think");
-            else if(x>a)
-            printf("\n HINT: The number is greater than what you think");
+            else if(x<a){
+                if(i!=3)
+                printf("\n HINT: The number is less than what you guessed");
+            }
+            else if(x>a){
+                if(i!=3)
+                printf("\n HINT: The number is greater than what you guessed");
+            }
 
             if(i==3){
                 printf("\n");
@@ -94,7 +109,6 @@ int main()
 
     if(choices==4){
         printf("\n Your score is %d\n",score);
-        goto start;
     }
 
     
@@ -118,14 +132,19 @@ int main()
             if(num==a){
                 ++score;
                 printf("\n Congratulations YOU GUESSED it Right! ");
-                printf("BINGO! YOU WIN ");
+                printf("\n BINGO! YOU WIN ");
+                printf("\n Your Score is %d",score);
                 break;
             }
-            else if(num>a)
-            printf("\n HINT: The number is greater than what you think");
+            else if(num>a){
+                if(i!=3)
+                printf("\n HINT: The number is greater than what you think");
+            }
 
-            else if(num<a)
-            printf("\n HINT: The number is less than what you think");
+            else if(num<a){
+                if(i!=3)
+                printf("\n HINT: The number is less than what you think");
+            }
 
             if(i==3){
                 printf("\n");
@@ -142,11 +161,6 @@ int main()
         printf(" THANKS FOR PLAYING THE GAME \n Made BY ABHISEK \n");
     }
 
-
-    else if(i==0||choices==0){
-        printf("\n You entered the wrong choice\n ");
-        goto start;
-    }
 
     getch();
 
